@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JHShowBigPicViewController">
+            <connections>
+                <outlet property="imageScrollView" destination="gPr-Pq-HJ9" id="dfc-gS-8lq"/>
+                <outlet property="progressView" destination="iSL-HK-1aq" id="Ftz-4U-rRy"/>
+                <outlet property="view" destination="S14-xP-Inz" id="ZhO-VE-mrg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="S14-xP-Inz">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPr-Pq-HJ9">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-HK-1aq" userLabel="环形下载进度条" customClass="JHProgressView">
+                    <rect key="frame" x="250" y="250" width="100" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="7vB-Vi-gs7"/>
+                        <constraint firstAttribute="height" constant="100" id="gYK-2m-n2z"/>
+                        <constraint firstAttribute="height" constant="100" id="qLe-Hq-gpa"/>
+                        <constraint firstAttribute="width" constant="100" id="rIY-up-QAa"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="7vB-Vi-gs7"/>
+                            <exclude reference="qLe-Hq-gpa"/>
+                        </mask>
+                    </variation>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IH0-2E-hVv" userLabel="返回">
+                    <rect key="frame" x="15" y="40" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="Jku-Pt-rcr"/>
+                        <constraint firstAttribute="height" constant="35" id="oUs-qF-CfR"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="show_image_back_icon"/>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="cur-uL-tdI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYH-d6-IZU" userLabel="保存">
+                    <rect key="frame" x="515" y="530" width="70" height="30"/>
+                    <color key="backgroundColor" red="0.74901960784313726" green="0.76078431372549016" blue="0.76078431372549016" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="FVR-iu-WmB"/>
+                        <constraint firstAttribute="width" constant="70" id="xQW-Po-NBT"/>
+                    </constraints>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveBtnClick:" destination="-1" eventType="touchUpInside" id="vfG-Jm-8b1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YC-At-o7u" userLabel="转发">
+                    <rect key="frame" x="430" y="530" width="70" height="30"/>
+                    <color key="backgroundColor" red="0.74732406370000004" green="0.76215945510000005" blue="0.75904046319999996" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="ZfX-Bq-Zdg"/>
+                        <constraint firstAttribute="height" constant="30" id="fu4-hy-snL"/>
+                    </constraints>
+                    <state key="normal" title="转发">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gPr-Pq-HJ9" secondAttribute="bottom" id="3en-bC-wIC"/>
+                <constraint firstItem="IH0-2E-hVv" firstAttribute="leading" secondItem="S14-xP-Inz" secondAttribute="leading" constant="15" id="7SN-fy-NMO"/>
+                <constraint firstAttribute="bottom" secondItem="0YC-At-o7u" secondAttribute="bottom" constant="15" id="8BP-yL-OB1"/>
+                <constraint firstItem="iSL-HK-1aq" firstAttribute="centerX" secondItem="S14-xP-Inz" secondAttribute="centerX" id="AUS-FM-ofB"/>
+                <constraint firstItem="gPr-Pq-HJ9" firstAttribute="leading" secondItem="S14-xP-Inz" secondAttribute="leading" id="BzV-pq-Qd2"/>
+                <constraint firstAttribute="trailing" secondItem="gPr-Pq-HJ9" secondAttribute="trailing" id="Ok5-MX-VHw"/>
+                <constraint firstItem="JYH-d6-IZU" firstAttribute="leading" secondItem="0YC-At-o7u" secondAttribute="trailing" constant="15" id="XGs-G1-bTg"/>
+                <constraint firstItem="gPr-Pq-HJ9" firstAttribute="top" secondItem="S14-xP-Inz" secondAttribute="top" id="bEy-ZZ-svr"/>
+                <constraint firstAttribute="trailing" secondItem="JYH-d6-IZU" secondAttribute="trailing" constant="15" id="bLr-dx-Ntu"/>
+                <constraint firstAttribute="bottom" secondItem="JYH-d6-IZU" secondAttribute="bottom" constant="40" id="dSL-tY-OAt"/>
+                <constraint firstItem="IH0-2E-hVv" firstAttribute="top" secondItem="S14-xP-Inz" secondAttribute="top" constant="40" id="fXe-J9-PpQ"/>
+                <constraint firstItem="0YC-At-o7u" firstAttribute="bottom" secondItem="JYH-d6-IZU" secondAttribute="bottom" id="wA0-rD-ic7"/>
+                <constraint firstItem="iSL-HK-1aq" firstAttribute="centerY" secondItem="S14-xP-Inz" secondAttribute="centerY" id="zGN-Iz-hz0"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="8BP-yL-OB1"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="90" y="507"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="show_image_back_icon" width="35" height="35"/>
+    </resources>
+</document>

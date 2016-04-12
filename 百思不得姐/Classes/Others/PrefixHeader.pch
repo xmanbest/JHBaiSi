@@ -1,0 +1,42 @@
+//
+//  PrefixHeader.pch
+//  百思不得姐
+//
+//  Created by 李建華 on 16/3/24.
+//  Copyright © 2016年 lijianhua. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIView+JHFrameConvenince.h"
+#import "UIBarButtonItem+JHExtention.h"
+#import "NSDate+JHExtension.h"
+#import "JHConst.h"
+
+// *****设置DEBUG Log切换宏 begin*****
+#ifdef DEBUG
+
+#define JHLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define JHLog(...)
+
+#endif
+// *****设置DEBUG Log切换宏 end*****
+
+// 获取颜色
+#define JHRGBColore(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+// 全局背景色
+#define JHGlobalBackColore JHRGBColore(233, 233, 233)
+// 屏幕宽度和高度
+#define JHScreenW [UIScreen mainScreen].bounds.size.width
+#define JHScreenH [UIScreen mainScreen].bounds.size.height
+
+// 打印方法信息
+#define JHLogFun JHLog(@"%s", __func__)
+
+#endif /* PrefixHeader_pch */
